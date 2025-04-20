@@ -16,52 +16,52 @@ import QuanLyTaiKhoanView from "../views/QuanLyTaiKhoanView.vue";
 
 const routes = [
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/",
+    path: "/",
     component: HomeView,
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-nhanvien",
+    path: "/login-nhanvien",
     component: LoginNhanVien,
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia",
+    path: "/login-docgia",
     component: LoginDocGia,
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/register",
+    path: "/register",
     component: RegisterView,
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/:pathMatch(.*)*",
+    path: ":pathMatch(.*)*",
     component: NotFound,
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/quan-ly-sach",
+    path: "quan-ly-sach",
     component: QuanLySachView,
     meta: { requiresAuth: true, role: "quanly" },
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/tai-khoan",
+    path: "tai-khoan",
     component: AccountView,
     meta: { requiresAuth: true },
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/muon-sach",
+    path: "muon-sach",
     component: MuonSachView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/lich-su-muon",
+    path: "lich-su-muon",
     component: LichSuMuonView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/theo-doi-muon",
+    path: "theo-doi-muon",
     component: TheoDoiMuonView,
     meta: { requiresAuth: true, role: ["quanly", "nhanvien"] },
   },
   {
-    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/quan-ly-tai-khoan",
+    path: "quan-ly-tai-khoan",
     component: QuanLyTaiKhoanView,
     meta: { requiresAuth: true, role: "quanly" },
   },
@@ -78,7 +78,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.meta.requiresAuth && !token) {
     alert("Bạn chưa đăng nhập!");
-    next("/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia");
+    next("login-docgia");
   } else if (to.meta.role && ![].concat(to.meta.role).includes(role)) {
     alert("Bạn không đủ quyền truy cập vào trang này!");
     next(from.fullPath);
