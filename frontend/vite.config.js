@@ -3,7 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 
 export default defineConfig({
-  base: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/",
+  base: './',
 
   plugins: [vue()],
   resolve: {
