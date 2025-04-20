@@ -6,7 +6,9 @@ const config = {
   },
 
   db: {
-    uri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/quanlymuonsach",
+    uri:
+      process.env.MONGODB_URI ||
+      "mongodb+srv://quanlymuonsach:thienhadenhat2@cluster0.f0nb520.mongodb.net/quanlymuonsach?retryWrites=true&w=majority&appName=Cluster0",
   },
 
   jwt: {
