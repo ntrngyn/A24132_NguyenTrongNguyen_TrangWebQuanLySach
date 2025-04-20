@@ -1,15 +1,18 @@
 <template>
-  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-sm w-100" style="max-width: 400px;">
-      <h2 class="text-center mb-3 text-primary">Đăng ký</h2>
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+      <h2 class="text-center text-primary">Đăng ký</h2>
       <form @submit.prevent="handleRegister">
         <div class="mb-3">
+          <label for="sdt" class="form-label">Số điện thoại</label>
           <input type="text" class="form-control" v-model="sdt" placeholder="Số điện thoại" required />
         </div>
         <div class="mb-3">
+          <label for="password" class="form-label">Mật khẩu</label>
           <input type="password" class="form-control" v-model="password" placeholder="Mật khẩu" required />
         </div>
         <div class="mb-3">
+          <label for="password" class="form-label">Nhập lại mật khẩu</label>
           <input type="password" class="form-control" v-model="confirmPassword" placeholder="Xác nhận mật khẩu"
             required />
         </div>
