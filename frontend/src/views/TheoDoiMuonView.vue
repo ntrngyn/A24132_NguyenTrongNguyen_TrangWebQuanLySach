@@ -1,11 +1,7 @@
 <template>
   <div>
-    <TheoDoiMuonList 
-      :danhSachDonMuon="danhSachDonMuon" 
-      @duyetMuon="duyetMuon" 
-      @xacNhanTra="xacNhanTra"
-      @xoaDonMuon="xoaDonMuon"
-    />
+    <TheoDoiMuonList :danhSachDonMuon="danhSachDonMuon" @duyetMuon="duyetMuon" @xacNhanTra="xacNhanTra"
+      @xoaDonMuon="xoaDonMuon" />
   </div>
 </template>
 
@@ -26,7 +22,7 @@ export default {
   methods: {
     async loadDanhSachMuon() {
       try {
-        const res = await axios.get("http://localhost:3000/api/theodoimuonsach");
+        const res = await axios.get('https://a24132-nguyentrongnguyen.onrender.com/api/theodoimuonsach');
         this.danhSachDonMuon = res.data;
       } catch (error) {
         console.error("Lỗi khi lấy danh sách đơn mượn:", error);
@@ -34,7 +30,7 @@ export default {
     },
     async duyetMuon(don) {
       try {
-        await axios.put(`http://localhost:3000/api/muonsach/duyet/${don._id}`);
+        await axios.put(`https://a24132-nguyentrongnguyen.onrender.com/api/muonsach/duyet/${don._id}`);
         this.loadDanhSachMuon();
       } catch (error) {
         console.error("Lỗi khi duyệt mượn:", error);
@@ -42,23 +38,23 @@ export default {
     },
     async xacNhanTra(don) {
       try {
-        await axios.put(`http://localhost:3000/api/muonsach/tra/${don._id}`);
+        await axios.put(`https://a24132-nguyentrongnguyen.onrender.com/api/muonsach/tra/${don._id}`);
         this.loadDanhSachMuon();
       } catch (error) {
         console.error("Lỗi khi xác nhận trả:", error);
       }
     },
     async xoaDonMuon(don) {
-        if (!confirm("Bạn có chắc chắn muốn xóa yêu cầu này?")) return;
+      if (!confirm("Bạn có chắc chắn muốn xóa yêu cầu này?")) return;
 
-        try {
-        await axios.delete(`http://localhost:3000/api/theodoimuonsach/${don._id}`);
+      try {
+        await axios.delete(`https://a24132-nguyentrongnguyen.onrender.com/api/theodoimuonsach/${don._id}`);
         this.danhSachDonMuon = this.danhSachDonMuon.filter(item => item._id !== don._id);
         alert("Xóa thành công!");
-        } catch (error) {
+      } catch (error) {
         console.error("Lỗi khi xóa yêu cầu:", error);
         alert("Xóa không thành công!");
-        }
+      }
     },
   }
 };

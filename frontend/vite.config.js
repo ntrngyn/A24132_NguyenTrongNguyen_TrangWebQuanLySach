@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: "https://a24132-nguyentrongnguyen.onrender.com",
+    port: 3001,
   },
 
   build: {

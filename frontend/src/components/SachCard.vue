@@ -49,7 +49,7 @@
 
 <template>
   <div class="sach-card">
-    <img :src="`http://localhost:3000${sach.HINHANH}`" alt="Hình ảnh sách" class="sach-image">
+    <img :src="`https://a24132-nguyentrongnguyen.onrender.com${sach.HINHANH}`" alt="Hình ảnh sách" class="sach-image">
 
     <div class="sach-info">
       <h2 class="sach-title">{{ sach.TENSACH }}</h2>

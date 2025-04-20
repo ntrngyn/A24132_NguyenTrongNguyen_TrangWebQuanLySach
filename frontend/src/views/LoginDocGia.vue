@@ -9,7 +9,8 @@
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Mật khẩu</label>
-          <input type="password" id="password" v-model="password" class="form-control" placeholder="Nhập mật khẩu" required />
+          <input type="password" id="password" v-model="password" class="form-control" placeholder="Nhập mật khẩu"
+            required />
         </div>
         <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
       </form>
@@ -33,19 +34,19 @@ export default {
   methods: {
     async handleLogin() {
       try {
-        const response = await axios.post('http://localhost:3000/api/auth/login/docgia', { 
-          sdt: this.sdt, 
-          password: this.password 
+        const response = await axios.post('https://a24132-nguyentrongnguyen.onrender.com/api/auth/login/docgia', {
+          sdt: this.sdt,
+          password: this.password
         });
 
         const token = response.data?.token ?? response.data?.user?.token;
         //console.log("Token:", token);
-        const id = response.data?._id || response.data?.user?._id; 
+        const id = response.data?._id || response.data?.user?._id;
 
         this.$store.dispatch("login", { _id: id, role: "docgia", token: token });
 
         alert('Đăng nhập độc giả thành công');
-        this.$router.push('/'); 
+        this.$router.push('/');
       } catch (error) {
         if (error.response) {
           if (error.response.status === 404 || error.response.status === 500) {
@@ -63,4 +64,3 @@ export default {
   }
 };
 </script>
-

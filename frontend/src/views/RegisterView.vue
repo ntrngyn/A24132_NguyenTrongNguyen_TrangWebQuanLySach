@@ -10,12 +10,13 @@
           <input type="password" class="form-control" v-model="password" placeholder="Mật khẩu" required />
         </div>
         <div class="mb-3">
-          <input type="password" class="form-control" v-model="confirmPassword" placeholder="Xác nhận mật khẩu" required />
+          <input type="password" class="form-control" v-model="confirmPassword" placeholder="Xác nhận mật khẩu"
+            required />
         </div>
         <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
       </form>
       <div class="text-center mt-3">
-        <p class="mb-0">Bạn đã có tài khoản? 
+        <p class="mb-0">Bạn đã có tài khoản?
           <router-link to="/login-docgia" class="text-decoration-none">Đăng nhập</router-link>
         </p>
       </div>
@@ -42,10 +43,11 @@ export default {
       }
 
       try {
-        await axios.post('http://localhost:3000/api/auth/register/docgia', { 
-          sdt: this.sdt, 
-          password: this.password, 
-          confirmPassword: this.confirmPassword });
+        await axios.post('https://a24132-nguyentrongnguyen.onrender.com/api/auth/register/docgia', {
+          sdt: this.sdt,
+          password: this.password,
+          confirmPassword: this.confirmPassword
+        });
         alert('Đăng ký thành công');
         this.$router.push('/login-docgia');
       } catch (error) {

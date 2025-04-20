@@ -39,15 +39,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUser"]), 
+    ...mapGetters(["getUser"]),
   },
   methods: {
     async getLichSuMuon() {
-      if (!this.getUser) return; 
+      if (!this.getUser) return;
       //console.log("Dữ liệu user trong Vuex:", this.$store.state.user);
       //console.log("Số điện thoại từ Vuex (MADOCGIA):", this.getUser);
       try {
-        const res = await axios.get("http://localhost:3000/api/theodoimuonsach"); 
+        const res = await axios.get('https://a24132-nguyentrongnguyen.onrender.com/api/theodoimuonsach');
         //console.log("Dữ liệu API trả về:", res.data);
         this.lichSuMuon = res.data.filter(m => String(m.MADOCGIA?._id) === String(this.getUser._id)); // Lọc theo ID độc giả
       } catch (error) {
@@ -80,9 +80,11 @@ export default {
 .text-warning {
   color: orange;
 }
+
 .text-primary {
   color: blue;
 }
+
 .text-success {
   color: green;
 }
