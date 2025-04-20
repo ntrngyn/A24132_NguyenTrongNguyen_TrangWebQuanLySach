@@ -8,7 +8,7 @@ export default {
   methods: {
     handleLogout() {
       this.$store.dispatch('logout'); // Gọi action logout để xóa userRole trong Vuex
-      this.$router.push('/login-docgia'); // Chuyển hướng về trang đăng nhập độc giả
+      this.$router.push('/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia'); // Chuyển hướng về trang đăng nhập độc giả
     }
   }
 };

@@ -12,7 +12,7 @@
           <input type="password" id="password" v-model="password" class="form-control" placeholder="Nhập mật khẩu"
             required />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+        <button router type="submit" class="btn btn-primary w-100">Đăng nhập</button>
       </form>
       <div class="text-start mt-2">
         <router-link to="/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-nhanvien"
