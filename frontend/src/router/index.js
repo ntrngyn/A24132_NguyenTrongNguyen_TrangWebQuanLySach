@@ -15,7 +15,10 @@ import TheoDoiMuonView from "@/views/TheoDoiMuonView.vue";
 import QuanLyTaiKhoanView from "../views/QuanLyTaiKhoanView.vue";
 
 const routes = [
-  { path: "/", component: HomeView },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/",
+    component: HomeView,
+  },
   { path: "/login-nhanvien", component: LoginNhanVien },
   { path: "/login-docgia", component: LoginDocGia },
   { path: "/register", component: RegisterView },
