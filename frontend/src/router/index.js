@@ -15,53 +15,34 @@ import TheoDoiMuonView from "@/views/TheoDoiMuonView.vue";
 import QuanLyTaiKhoanView from "../views/QuanLyTaiKhoanView.vue";
 
 const routes = [
+  { path: "/", component: HomeView },
+  { path: "/login-nhanvien", component: LoginNhanVien },
+  { path: "/login-docgia", component: LoginDocGia },
+  { path: "/register", component: RegisterView },
+  { path: "/:pathMatch(.*)*", component: NotFound },
   {
-    path: "/",
-    component: HomeView,
-  },
-  {
-    path: "/login-nhanvien",
-    component: LoginNhanVien,
-  },
-  {
-    path: "/login-docgia",
-    component: LoginDocGia,
-  },
-  {
-    path: "/register",
-    component: RegisterView,
-  },
-  {
-    path: ":pathMatch(.*)*",
-    component: NotFound,
-  },
-  {
-    path: "quan-ly-sach",
+    path: "/quan-ly-sach",
     component: QuanLySachView,
     meta: { requiresAuth: true, role: "quanly" },
   },
+  { path: "/tai-khoan", component: AccountView, meta: { requiresAuth: true } },
   {
-    path: "tai-khoan",
-    component: AccountView,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "muon-sach",
+    path: "/muon-sach",
     component: MuonSachView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "lich-su-muon",
+    path: "/lich-su-muon",
     component: LichSuMuonView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "theo-doi-muon",
+    path: "/theo-doi-muon",
     component: TheoDoiMuonView,
     meta: { requiresAuth: true, role: ["quanly", "nhanvien"] },
   },
   {
-    path: "quan-ly-tai-khoan",
+    path: "/quan-ly-tai-khoan",
     component: QuanLyTaiKhoanView,
     meta: { requiresAuth: true, role: "quanly" },
   },
@@ -78,7 +59,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.meta.requiresAuth && !token) {
     alert("Bạn chưa đăng nhập!");
-    next("login-docgia");
+    next("/login-docgia");
   } else if (to.meta.role && ![].concat(to.meta.role).includes(role)) {
     alert("Bạn không đủ quyền truy cập vào trang này!");
     next(from.fullPath);
