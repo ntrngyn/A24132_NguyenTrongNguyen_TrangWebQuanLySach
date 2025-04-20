@@ -19,33 +19,49 @@ const routes = [
     path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/",
     component: HomeView,
   },
-  { path: "/login-nhanvien", component: LoginNhanVien },
-  { path: "/login-docgia", component: LoginDocGia },
-  { path: "/register", component: RegisterView },
-  { path: "/:pathMatch(.*)*", component: NotFound },
   {
-    path: "/quan-ly-sach",
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-nhanvien",
+    component: LoginNhanVien,
+  },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia",
+    component: LoginDocGia,
+  },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/register",
+    component: RegisterView,
+  },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/:pathMatch(.*)*",
+    component: NotFound,
+  },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/quan-ly-sach",
     component: QuanLySachView,
     meta: { requiresAuth: true, role: "quanly" },
   },
-  { path: "/tai-khoan", component: AccountView, meta: { requiresAuth: true } },
   {
-    path: "/muon-sach",
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/tai-khoan",
+    component: AccountView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/muon-sach",
     component: MuonSachView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "/lich-su-muon",
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/lich-su-muon",
     component: LichSuMuonView,
     meta: { requiresAuth: true, role: "docgia" },
   },
   {
-    path: "/theo-doi-muon",
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/theo-doi-muon",
     component: TheoDoiMuonView,
     meta: { requiresAuth: true, role: ["quanly", "nhanvien"] },
   },
   {
-    path: "/quan-ly-tai-khoan",
+    path: "/A24132_NguyenTrongNguyen_TrangWebQuanLySach/quan-ly-tai-khoan",
     component: QuanLyTaiKhoanView,
     meta: { requiresAuth: true, role: "quanly" },
   },
@@ -62,7 +78,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.meta.requiresAuth && !token) {
     alert("Bạn chưa đăng nhập!");
-    next("/login-docgia");
+    next("/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia");
   } else if (to.meta.role && ![].concat(to.meta.role).includes(role)) {
     alert("Bạn không đủ quyền truy cập vào trang này!");
     next(from.fullPath);
