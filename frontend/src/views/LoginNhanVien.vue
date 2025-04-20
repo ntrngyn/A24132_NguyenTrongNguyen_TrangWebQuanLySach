@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="container d-flex justify-content-center align-items-center vh-100" style="margin-top: -10%;">
     <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
       <h2 class="text-center text-primary">Đăng nhập Nhân viên</h2>
       <form @submit.prevent="handleLogin">
@@ -15,7 +15,8 @@
         <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
       </form>
       <div class="text-start mt-2">
-        <router-link to="/login-docgia" class="text-decoration-none text-muted">Là độc giả?</router-link>
+        <router-link to="/A24132_NguyenTrongNguyen_TrangWebQuanLySach/login-docgia"
+          class="text-decoration-none text-muted">Là độc giả?</router-link>
       </div>
     </div>
   </div>

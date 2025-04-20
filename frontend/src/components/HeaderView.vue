@@ -17,7 +17,8 @@ export default {
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <router-link class="navbar-brand" to="/">Quản lý mượn sách</router-link>
+      <router-link class="navbar-brand" to="/A24132_NguyenTrongNguyen_TrangWebQuanLySach/">Quản lý mượn
+        sách</router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
